@@ -4,7 +4,7 @@ PostgreSQL connector for umzug
 
 Also featuring a small utility function for running migrations atomically using transactions.
 
-    npm i umzug-postgres-storage
+    npm i @robotty/umzug-postgres-storage
 
 ```javascript
 import { Pool } from 'pg';
