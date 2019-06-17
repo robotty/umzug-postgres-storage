@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "lib": [
+      "esnext"
+    ],
+    "target": "esnext",
+    "outDir": "./dist",
+    "declaration": true,
+    "sourceMap": true,
+    "declarationMap": true,
+    "noImplicitThis": true,
+    "module": "commonjs",
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "lib/**/*"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "umzug-postgres-storage",
+  "version": "1.0.0",
+  "description": "PostgreSQL connector for umzug",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --ext .ts lib/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robotty/umzug-postgres-storage.git"
+  },
+  "keywords": [
+    "postgresql",
+    "postgres",
+    "umzug",
+    "migration"
+  ],
+  "author": "Ruben Anders",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robotty/umzug-postgres-storage/issues"
+  },
+  "homepage": "https://github.com/robotty/umzug-postgres-storage#readme",
+  "dependencies": {
+    "pg": "^7.11.0",
+    "pg-escape": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^7.4.14",
+    "@types/pg-escape": "^0.2.0",
+    "@types/umzug": "^2.2.2",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "eslint": "^5.16.0",
+    "typescript": "^3.5.2"
+  }
+}
