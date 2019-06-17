@@ -11,7 +11,7 @@ import { Pool } from 'pg';
 import { PGStorage, migrateInTransaction } from '@robotty/umzug-postgres-storage';
 import * as Umzug from 'umzug';
 // const { Pool } = require('pg');
-// const { PGStorage, migrateInTransaction } = require('umzug-postgres-storage');
+// const { PGStorage, migrateInTransaction } = require('@robotty/umzug-postgres-storage');
 // const Umzug = require('umzug');
 
 async function runMigrations() {
