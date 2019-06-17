@@ -1,5 +1,5 @@
 {
-  "name": "umzug-postgres-storage",
+  "name": "@robotty/umzug-postgres-storage",
   "version": "1.0.0",
   "description": "PostgreSQL connector for umzug",
   "main": "dist/index.js",
