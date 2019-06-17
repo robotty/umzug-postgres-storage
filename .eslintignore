@@ -87,4 +87,3 @@ jspm_packages/
 .dynamodb/
 
 dist/
-config.js
