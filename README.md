@@ -41,6 +41,8 @@ async function runMigrations() {
         
         return await umzug.up();
     });
+    
+    console.log("Successfully ran these migrations:", migrations)
 }
 
 runMigrations().catch(e => {
