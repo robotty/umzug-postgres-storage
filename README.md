@@ -8,7 +8,7 @@ Also featuring a small utility function for running migrations atomically using 
 
 ```javascript
 import { Pool } from 'pg';
-import { PGStorage, migrateInTransaction } from 'umzug-postgres-storage';
+import { PGStorage, migrateInTransaction } from '@robotty/umzug-postgres-storage';
 import * as Umzug from 'umzug';
 // const { Pool } = require('pg');
 // const { PGStorage, migrateInTransaction } = require('umzug-postgres-storage');
