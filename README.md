@@ -29,12 +29,14 @@ async function runMigrations() {
     // (note that migrateInTransaction also accepts single connections, not only pools)
     let migrations = await migrateInTransaction(dbPool, async db => {
         let umzug = new Umzug({
-            storage: new PGStorage({
-                db: db, // required
+            // second parameter (config) is entirely optional
+            storage: new PGStorage(db, {
                 tableName: "MyAppMigration", // optional (default is SchemaMigration)
                 columnName: "MyAppRevisionID" // optional (default is RevisionID)
             }),
             migrations: {
+                // passes the db connection to use to the first parameter of all the up()/down() migrations
+                // you defined for umzug to run
                 params: [db]
             }
         });

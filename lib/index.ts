@@ -3,13 +3,11 @@ import { Storage } from 'umzug';
 import { ident } from 'pg-escape';
 
 export interface PGStorageConfiguration {
-    db: ClientBase;
     tableName: string;
     columnName: string;
 }
 
 const configDefaults: PGStorageConfiguration = {
-    db: undefined!,
     tableName: 'SchemaMigration',
     columnName: 'RevisionID'
 };
@@ -19,12 +17,9 @@ export class PGStorage implements Storage {
     private readonly config: PGStorageConfiguration;
     private tableCreated = false;
 
-    public constructor(partialConfig: Partial<PGStorageConfiguration> = {}) {
-        this.config = Object.assign(partialConfig, configDefaults);
-        this.db = this.config.db;
-        if (this.db == null) {
-            throw new Error('PGStorage requires a db connection or connection pool to be specified');
-        }
+    public constructor(db: ClientBase, partialConfig: Partial<PGStorageConfiguration> = {}) {
+        this.db = db;
+        this.config = Object.assign({}, partialConfig, configDefaults);
     }
 
     private async createTable(): Promise<void> {
