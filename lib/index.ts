@@ -23,7 +23,7 @@ export class PGStorage implements Storage {
         this.config = Object.assign(partialConfig, configDefaults);
         this.db = this.config.db;
         if (this.db == null) {
-            throw new Error('PGStorage requires a db connection pool to be specified');
+            throw new Error('PGStorage requires a db connection or connection pool to be specified');
         }
     }
 
