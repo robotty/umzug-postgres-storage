@@ -28,8 +28,8 @@ export class PGStorage implements Storage {
         }
 
         await this.db.query(`
-            CREATE TABLE IF NOT EXISTS "${ident(this.config.tableName)}" (
-                "${ident(this.config.columnName)}" TEXT NOT NULL PRIMARY KEY UNIQUE
+            CREATE TABLE IF NOT EXISTS ${ident(this.config.tableName)} (
+                ${ident(this.config.columnName)} TEXT NOT NULL PRIMARY KEY UNIQUE
             )
         `);
         this.tableCreated = true;
