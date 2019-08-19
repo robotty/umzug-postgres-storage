@@ -8,8 +8,8 @@ export interface PGStorageConfiguration {
 }
 
 const configDefaults: PGStorageConfiguration = {
-  tableName: "SchemaMigration",
-  columnName: "RevisionID"
+  tableName: "schema_migration",
+  columnName: "revision_id"
 };
 
 export class PGStorage implements Storage {
