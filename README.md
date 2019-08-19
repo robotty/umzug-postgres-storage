@@ -34,8 +34,8 @@ async function runMigrations() {
     let umzug = new Umzug({
       // second parameter (config) is entirely optional
       storage: new PGStorage(db, {
-        tableName: "MyAppMigration", // optional (default is SchemaMigration)
-        columnName: "MyAppRevisionID" // optional (default is RevisionID)
+        tableName: "my_app_migration", // optional (default is schema_migration)
+        columnName: "my_app_revision_id" // optional (default is revision_id)
       }),
       migrations: {
         // passes the db connection to use to the first parameter of all the up()/down() migrations
