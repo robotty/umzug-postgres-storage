@@ -1,17 +1,26 @@
 {
   "name": "@robotty/umzug-postgres-storage",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "PostgreSQL connector for umzug",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "directories": {
     "lib": "lib"
   },
+  "files": [
+    "dist/**/*",
+    "types/**/*"
+  ],
   "scripts": {
     "build": "tsc",
-    "lint": "eslint --ext .ts lib/",
+    "lint": "eslint --ext .ts .",
+    "check-format": "prettier --check \"**/*.md\" \"**/*.js\" \"**/*.ts\" \"**/*.yml\" \"**/*.json\"",
+    "eslint": "eslint --format codeframe --ext .ts .",
+    "tslint": "tslint --project .",
+    "lintfix": "npm run eslint -- --fix && npm run tslint -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist",
+    "prettier-watch": "onchange -v \"**/*.ts\" \"**/*.js\" -- prettier --write {{changed}}"
   },
   "repository": {
     "type": "git",
@@ -30,16 +39,23 @@
   },
   "homepage": "https://github.com/robotty/umzug-postgres-storage#readme",
   "dependencies": {
-    "pg": "^7.11.0",
+    "pg": "^7.12.1",
     "pg-escape": "^0.2.0"
   },
   "devDependencies": {
-    "@types/pg": "^7.4.14",
+    "@types/pg": "^7.11.0",
     "@types/pg-escape": "^0.2.0",
     "@types/umzug": "^2.2.2",
-    "@typescript-eslint/eslint-plugin": "^1.10.2",
-    "@typescript-eslint/parser": "^1.10.2",
-    "eslint": "^5.16.0",
-    "typescript": "^3.5.2"
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.2.0",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.3"
   }
 }

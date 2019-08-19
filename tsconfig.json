@@ -2,9 +2,7 @@
   "compilerOptions": {
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "lib": [
-      "esnext"
-    ],
+    "lib": ["esnext"],
     "target": "esnext",
     "outDir": "./dist",
     "declaration": true,
@@ -16,14 +14,8 @@
     "strictNullChecks": true,
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   },
-  "include": [
-    "lib/**/*"
-  ],
-  "exclude": [
-    "**/*.spec.ts"
-  ]
+  "include": ["lib/**/*"],
+  "exclude": ["**/*.spec.ts"]
 }
