@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/robotty/umzug-postgres-storage#readme",
   "dependencies": {
-    "pg": "^7.12.1",
+    "pg": "^8.3.2",
     "pg-escape": "^0.2.0"
   },
   "devDependencies": {
