@@ -1,5 +1,7 @@
 # umzug-postgres-storage
 
+![Build](https://github.com/robotty/umzug-postgres-storage/workflows/Build/badge.svg)
+
 PostgreSQL connector for umzug
 
 Also featuring a small utility function for running migrations atomically using transactions.
