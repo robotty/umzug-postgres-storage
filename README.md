@@ -10,7 +10,7 @@ Also featuring a small utility function for running migrations atomically using 
 import { Pool } from "pg";
 import {
   PGStorage,
-  migrateInTransaction
+  migrateInTransaction,
 } from "@robotty/umzug-postgres-storage";
 import * as Umzug from "umzug";
 // const { Pool } = require('pg');
@@ -21,7 +21,7 @@ async function runMigrations() {
   // for options, see: https://node-postgres.com/features/connecting
   let dbPool = new Pool({
     database: "testdb",
-    host: "/var/run/postgresql"
+    host: "/var/run/postgresql",
   });
 
   // migrateInTransaction begins and commits/rollbacks a transaction for you
@@ -30,18 +30,18 @@ async function runMigrations() {
 
   // whatever you return from the async function inside gets returned to here
   // (note that migrateInTransaction also accepts single connections, not only pools)
-  let migrations = await migrateInTransaction(dbPool, async db => {
+  let migrations = await migrateInTransaction(dbPool, async (db) => {
     let umzug = new Umzug({
       // second parameter (config) is entirely optional
       storage: new PGStorage(db, {
         tableName: "my_app_migration", // optional (default is schema_migration)
-        columnName: "my_app_revision_id" // optional (default is revision_id)
+        columnName: "my_app_revision_id", // optional (default is revision_id)
       }),
       migrations: {
         // passes the db connection to use to the first parameter of all the up()/down() migrations
         // you defined for umzug to run
-        params: [db]
-      }
+        params: [db],
+      },
     });
 
     return await umzug.up();
@@ -50,7 +50,7 @@ async function runMigrations() {
   console.log("Successfully ran these migrations:", migrations);
 }
 
-runMigrations().catch(e => {
+runMigrations().catch((e) => {
   console.error(e);
   process.exitCode = 1;
 });

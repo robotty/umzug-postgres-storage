@@ -3,23 +3,21 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   env: {
     es6: true,
-    node: true
+    node: true,
   },
-  extends: [
-    "plugin:@typescript-eslint/recommended",
-  ],
+  extends: ["plugin:@typescript-eslint/recommended"],
   plugins: ["@typescript-eslint"],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: "module",
-    project: "tsconfig.json"
+    project: "tsconfig.json",
   },
   rules: {
     "@typescript-eslint/explicit-function-return-type": [
       "warn",
       {
-        allowExpressions: true
-      }
+        allowExpressions: true,
+      },
     ],
     "@typescript-eslint/no-parameter-properties": ["off"],
     "@typescript-eslint/no-explicit-any": "off",
@@ -27,7 +25,7 @@ module.exports = {
     "@typescript-eslint/prefer-interface": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/no-use-before-define": "off",
-    "@typescript-eslint/array-type": "off"
+    "@typescript-eslint/array-type": "off",
     // "no-warning-comments": "warn"
-  }
+  },
 };

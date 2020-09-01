@@ -9,7 +9,7 @@ export interface PGStorageConfiguration {
 
 const configDefaults: PGStorageConfiguration = {
   tableName: "schema_migration",
-  columnName: "revision_id"
+  columnName: "revision_id",
 };
 
 export class PGStorage implements Storage {
@@ -32,7 +32,7 @@ export class PGStorage implements Storage {
         SELECT ${ident(this.config.columnName)}
         FROM ${ident(this.config.tableName)}
         ORDER BY ${ident(this.config.columnName)} ASC`,
-      rowMode: "array"
+      rowMode: "array",
     });
 
     return result.rows.flat();
@@ -46,7 +46,7 @@ export class PGStorage implements Storage {
           (${ident(this.config.columnName)})
           VALUES ($1)
           ON CONFLICT DO NOTHING`,
-      values: [migrationName]
+      values: [migrationName],
     });
   }
 
@@ -56,7 +56,7 @@ export class PGStorage implements Storage {
       text: `
         DELETE FROM ${ident(this.config.tableName)}
         WHERE ${ident(this.config.columnName)} = $1`,
-      values: [migrationName]
+      values: [migrationName],
     });
   }
 
