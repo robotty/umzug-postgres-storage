@@ -95,7 +95,7 @@ export async function migrateInTransaction<T>(
     throw e;
   } finally {
     if (db instanceof Pool) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore release() does not exist on BaseClient
       conn.release();
     }
