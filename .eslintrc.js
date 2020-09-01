@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   parser: "@typescript-eslint/parser",
   env: {
     es6: true,
@@ -6,16 +7,14 @@ module.exports = {
   },
   extends: [
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint"
   ],
-  plugins: ["@typescript-eslint", "@typescript-eslint/tslint", "prettier"],
+  plugins: ["@typescript-eslint"],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: "module",
     project: "tsconfig.json"
   },
   rules: {
-    "prettier/prettier": "error",
     "@typescript-eslint/explicit-function-return-type": [
       "warn",
       {
@@ -28,12 +27,6 @@ module.exports = {
     "@typescript-eslint/prefer-interface": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/no-use-before-define": "off",
-    "@typescript-eslint/tslint/config": [
-      "warn",
-      {
-        lintFile: "./tslint.json"
-      }
-    ],
     "@typescript-eslint/array-type": "off"
     // "no-warning-comments": "warn"
   }
